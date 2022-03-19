@@ -1,4 +1,4 @@
-import { ValidationException } from "src/exception/ValidationException"
+import { ValidationException } from "../exception/ValidationException"
 
 export class CreateTaskDto {
   constructor(

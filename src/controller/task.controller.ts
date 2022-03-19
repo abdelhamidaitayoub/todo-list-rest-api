@@ -9,10 +9,11 @@ import {
   requestParam,
   response,
 } from "inversify-express-utils"
-import { CreateTaskDto } from "src/dto/create-task.dto"
-import { Task } from "src/entity/Task"
-import { NotFoundException } from "src/exception/NotFoundException"
-import { ValidateBodyMiddelware } from "src/middelware/validate-body.middelware"
+import { Response } from "express"
+import { CreateTaskDto } from "../dto/create-task.dto"
+import { Task } from "../entity/Task"
+import { NotFoundException } from "../exception/NotFoundException"
+import { ValidateBodyMiddelware } from "../middelware/validate-body.middelware"
 
 // TODO: Validation (validate fields)
 @controller("/api/tasks")
@@ -22,6 +23,7 @@ export class TaskController {
   @httpGet("/")
   async getAllTasks(@response() res: Response) {
     const tasks = await this.taskservice.listAll()
+    // @ts-ignore
     res.status(200).json({
       status: 200,
       data: {
@@ -36,6 +38,7 @@ export class TaskController {
 
     if (!task) throw new NotFoundException("this task not existe")
 
+    // @ts-ignore
     res.status(200).json({
       status: 200,
       data: {
@@ -50,6 +53,7 @@ export class TaskController {
     @requestBody() body: Partial<Task>
   ) {
     const task = await this.taskservice.create(body)
+    // @ts-ignore
     res.status(201).json({
       status: 201,
       data: {
@@ -67,7 +71,7 @@ export class TaskController {
     const updated = await this.taskservice.update(id, createTaskDto)
     if (updated.affected == 0)
       throw new NotFoundException("this task not existe")
-
+    // @ts-ignore
     res.status(200).json({
       status: 200,
       data: {
@@ -81,7 +85,7 @@ export class TaskController {
     const deleted = await this.taskservice.delete(id)
     if (deleted.affected == 0)
       throw new NotFoundException("this task not existe")
-
+    // @ts-ignore
     res.status(204).json({})
   }
 }

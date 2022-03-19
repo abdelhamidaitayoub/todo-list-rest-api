@@ -5,7 +5,7 @@ export class ValidateBodyMiddelware extends BaseMeddleWare {
   constructor(private readonly _dtoClasss: { from: any }) {
     super()
   }
-
+// @ts-ignore
   public handler(
     req: Request,
     res: Response,
