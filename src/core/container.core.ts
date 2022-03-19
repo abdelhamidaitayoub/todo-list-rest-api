@@ -1,6 +1,6 @@
 import { Container } from "inversify"
-import { DatabaseService } from "src/service/database.service"
-import { TaskService } from "src/service/task.service"
+import { DatabaseService } from "@service/database.service"
+import { TaskService } from "@service/task.service"
 
 export const container = new Container()
 container.bind(TaskService).toSelf()

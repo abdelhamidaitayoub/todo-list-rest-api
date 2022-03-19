@@ -11,6 +11,11 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "strictPropertyInitialization": false,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@service/*": ["src/service/*"],
+      "@repository/*": ["src/repository/*"],
+      "@controller/*": ["src/controller/*"]
+    }
   }
 }

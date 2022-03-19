@@ -8,7 +8,7 @@ import {
   requestParam,
 } from "inversify-express-utils"
 import { CreateTaskDto } from "src/dto/create-task.dto"
-import { TaskService } from "src/service/task.service"
+import { TaskService } from "@service/task.service"
 
 // TODO: Validation (validate fields)
 @controller("/api/tasks")

@@ -1,11 +1,10 @@
 import { injectable } from "inversify"
 import { CreateTaskDto } from "src/dto/create-task.dto"
-import { TaskRepository } from "src/repository/task.repository"
+import { TaskRepository } from "@repository/task.repository"
 import { DatabaseService } from "./database.service"
 
 @injectable()
 export class TaskService {
-  // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
   constructor(private readonly dbService: DatabaseService) {}
 
   public async listAll() {
