@@ -2,6 +2,8 @@ import { injectable } from "inversify"
 import { CreateTaskDto } from "src/dto/create-task.dto"
 import { TaskRepository } from "@repository/task.repository"
 import { DatabaseService } from "./database.service"
+import { validate } from "class-validator"
+import HttpException from "src/exception/HttpException"
 
 @injectable()
 export class TaskService {
@@ -17,8 +19,7 @@ export class TaskService {
     return await repository.findOne(id)
   }
 
-  // TODO: How i use DTO to get the data from the user ?
-  public async create(task: CreateTaskDto) {
+  public async create(task: any) {
     const repository = await this.dbService.getRepository(TaskRepository)
     return await repository.save(task)
   }

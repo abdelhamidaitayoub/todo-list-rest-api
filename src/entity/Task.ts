@@ -1,4 +1,10 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from "typeorm"
 
 @Entity()
 export class Task {
@@ -13,4 +19,10 @@ export class Task {
 
   @Column({ name: "is_completed", default: false })
   public isCompleted: boolean
+
+  @CreateDateColumn()
+  public createdAt: Date
+
+  @UpdateDateColumn()
+  public updatedAt: Date
 }
