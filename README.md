@@ -15,7 +15,7 @@ docker-compose up -d
 
 ## Project description
 
-this project is a simple todo rest api app, the main goal is to make it easy to maintain and scale that's why i decide to use Typescript, Inversify as IOC container...
+This project is a simple todo rest api app, the main goal is to make it easy to maintain and scale that's why i decide to use Typescript (no framework), InversifyJS as IOC container and Follow SOLID principles..
 
 ### Exposes 5 endpoints:
 
