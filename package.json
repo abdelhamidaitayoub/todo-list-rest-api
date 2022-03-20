@@ -4,7 +4,7 @@
   "main": "bootstrap.ts",
   "author": "Abdelhamid Ait-ayoub",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only --no-notify -r tsconfig-paths/register src/bootstrap.ts",
+    "dev": "ts-node-dev -r dotenv/config --respawn --transpile-only --no-notify -r tsconfig-paths/register src/bootstrap.ts",
     "build": "tsc && tsc-alias",
     "lint": "eslint . --ext .ts"
   },
